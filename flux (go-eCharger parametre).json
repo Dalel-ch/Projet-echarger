@@ -1,0 +1,1009 @@
+[
+    {
+        "id": "d2cee00f5160b7d2",
+        "type": "tab",
+        "label": "go-eCharger parametre",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cc8d98da46884707",
+        "type": "inject",
+        "z": "d2cee00f5160b7d2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "apiResp",
+        "payloadType": "global",
+        "x": 200,
+        "y": 760,
+        "wires": [
+            [
+                "7df2a90e305b7c68",
+                "51a57480daf4cea8",
+                "ae5fad2a8684b6ec",
+                "76e801e31e588dc3",
+                "3386f1afb74422c5",
+                "0b86b12c9fa780a4",
+                "92cae53f152dd202",
+                "3248796a2acd803c",
+                "53f731e12de03be1",
+                "321449d3e930e028",
+                "7111cbe47295bfdf",
+                "508b6359bd183266",
+                "f6857f38bce240ad",
+                "36f83e046e466696",
+                "e2aa6884d0c14b91"
+            ]
+        ]
+    },
+    {
+        "id": "7df2a90e305b7c68",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "ffna",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ffna",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "ded03c7d6c7ed86d"
+            ]
+        ]
+    },
+    {
+        "id": "ded03c7d6c7ed86d",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "2056cfa212533e2f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "type de borne",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1040,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "51a57480daf4cea8",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "cll",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.cll",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "2d15e29e.f0d32e"
+            ]
+        ]
+    },
+    {
+        "id": "ae5fad2a8684b6ec",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "eto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.eto",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "ce19ab275c264ecb"
+            ]
+        ]
+    },
+    {
+        "id": "ce19ab275c264ecb",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "375e8180d9e38cbe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Energie moyenne ",
+        "format": "{{msg.payload}} Wh",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1370,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "76e801e31e588dc3",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "amp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.amp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 580,
+        "wires": [
+            [
+                "4df460b38e4144bb"
+            ]
+        ]
+    },
+    {
+        "id": "4df460b38e4144bb",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "5e88c71097315d38",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Courant demandé  ",
+        "format": "{{msg.payload}} A",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1122.8571472167969,
+        "y": 575.7142333984375,
+        "wires": []
+    },
+    {
+        "id": "3386f1afb74422c5",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "sse",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sse",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [
+                "7c197c3834c41a1b"
+            ]
+        ]
+    },
+    {
+        "id": "7c197c3834c41a1b",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "2056cfa212533e2f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "numero de série :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1190,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0b86b12c9fa780a4",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "fhz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.fhz",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "e56d5e5e1c2ae9eb"
+            ]
+        ]
+    },
+    {
+        "id": "cc3caae5047ce397",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "5e88c71097315d38",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LimiteMax actuelle",
+        "format": "{{msg.payload.currentLimitMax}} A",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1350,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e56d5e5e1c2ae9eb",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "618a3617b2e04ad1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Frequence",
+        "format": "{{msg.payload.toFixed(2)}} Hrz",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1170,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "92cae53f152dd202",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "acs",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.acs",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 820,
+        "wires": [
+            [
+                "6de4e6cd2503cb5d"
+            ]
+        ]
+    },
+    {
+        "id": "3248796a2acd803c",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "car",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.car",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 920,
+        "wires": [
+            [
+                "a039dae9485c1934"
+            ]
+        ]
+    },
+    {
+        "id": "0e2f36243415509f",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "baee9e0aaf33aeb1",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "Etat de Car :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1230,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "a039dae9485c1934",
+        "type": "function",
+        "z": "d2cee00f5160b7d2",
+        "name": "Etat de car",
+        "func": "\nvar states = {\n    0: 'Inconnu/Erreur',\n    1: 'Inactif',\n    2: 'Chargement',\n    3: 'WaitCar',\n    4: 'Terminé',\n    5: 'Erreur'\n};\n\n// Vérifie si msg.payload est une valeur valide et assigne l'état correspondant\nmsg.payload = states[msg.payload] || 'Valeur invalide';\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 920,
+        "wires": [
+            [
+                "0e2f36243415509f"
+            ]
+        ]
+    },
+    {
+        "id": "53f731e12de03be1",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "fst",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.fst",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 1000,
+        "wires": [
+            [
+                "d7f0427db4e70dc5"
+            ]
+        ]
+    },
+    {
+        "id": "d7f0427db4e70dc5",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "244d6d43e09b255f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Puissance de démarrage ",
+        "format": "{{msg.payload}} W",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1230,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "321449d3e930e028",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "fmt",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.fmt",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 1100,
+        "wires": [
+            [
+                "6aa95adbc5a7131a"
+            ]
+        ]
+    },
+    {
+        "id": "6aa95adbc5a7131a",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "14d1eaab2c680f55",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "name": "",
+        "label": "minChargeTime",
+        "format": "{{msg.payload}} ms",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1220,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "7111cbe47295bfdf",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "ate",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ate",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 1200,
+        "wires": [
+            [
+                "14c8542a20395c8c"
+            ]
+        ]
+    },
+    {
+        "id": "14c8542a20395c8c",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "375e8180d9e38cbe",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Arrêt automatique énergie",
+        "format": "{{msg.payload}} Wh",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1260,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "508b6359bd183266",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "mmp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mmp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 1300,
+        "wires": [
+            [
+                "dd772addb756f8bc"
+            ]
+        ]
+    },
+    {
+        "id": "dd772addb756f8bc",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "244d6d43e09b255f",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "name": "",
+        "label": "Puissance de charge max mesurée",
+        "format": "{{msg.payload}}W",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1280,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "f6857f38bce240ad",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "upo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.upo",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1400,
+        "wires": [
+            [
+                "f0c9c23d5de5e5d4"
+            ]
+        ]
+    },
+    {
+        "id": "36f83e046e466696",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "cus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.cus",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1500,
+        "wires": [
+            [
+                "55c2ae0f7dc2b8dd"
+            ]
+        ]
+    },
+    {
+        "id": "55c2ae0f7dc2b8dd",
+        "type": "function",
+        "z": "d2cee00f5160b7d2",
+        "name": "Etat de cable",
+        "func": "\n// Le code de la fonction\nvar states = {\n    0: 'Inconnu',\n    1: 'Déverrouillé',\n    2: 'Échec du déverrouillage',\n    3: 'Verrouillé',\n    4: 'Échec du verrouillage',\n    5: 'LockUnlockPowerout'\n};\n\n// Vérifie si msg.payload est une valeur valide et assigne l'état correspondant\nmsg.payload = states[msg.payload] || 'Valeur invalide';\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 1500,
+        "wires": [
+            [
+                "a0acba1b198e5221"
+            ]
+        ]
+    },
+    {
+        "id": "a0acba1b198e5221",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "baee9e0aaf33aeb1",
+        "order": 2,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "État  du câble :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1280,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "e2aa6884d0c14b91",
+        "type": "change",
+        "z": "d2cee00f5160b7d2",
+        "name": "loty",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.loty",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1620,
+        "wires": [
+            [
+                "41efc55ec4a0e62d"
+            ]
+        ]
+    },
+    {
+        "id": "41efc55ec4a0e62d",
+        "type": "function",
+        "z": "d2cee00f5160b7d2",
+        "name": "Etat de charge ",
+        "func": "\nvar types = {\n    0: 'statique',\n    1: 'dynamique'\n};\n\n// Vérifie si msg.payload est une valeur valide et assigne le type correspondant\nmsg.payload = types[msg.payload] || 'Valeur invalide';\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 1620,
+        "wires": [
+            [
+                "d776345dacba7f79"
+            ]
+        ]
+    },
+    {
+        "id": "d776345dacba7f79",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "77a251d5341ea018",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "État  du charge  :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1360,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "2d15e29e.f0d32e",
+        "type": "function",
+        "z": "d2cee00f5160b7d2",
+        "name": "Current Limit",
+        "func": "var newPayload = {\n    adapterCurrentLimit: msg.payload.adapterCurrentLimit,\n    currentLimitMax: msg.payload.currentLimitMax\n};\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 340,
+        "wires": [
+            [
+                "cc3caae5047ce397",
+                "aee4e9859ff46ed1"
+            ]
+        ]
+    },
+    {
+        "id": "6de4e6cd2503cb5d",
+        "type": "function",
+        "z": "d2cee00f5160b7d2",
+        "name": "Access Control",
+        "func": "var states = {\n    0: 'Open',\n    1: 'Wait',\n    \n};\n\n// Vérifie si msg.payload est une valeur valide et assigne l'état correspondant\nmsg.payload = states[msg.payload] || 'Valeur invalide';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 820,
+        "wires": [
+            [
+                "f1b6e8d6.420b68"
+            ]
+        ]
+    },
+    {
+        "id": "f1b6e8d6.420b68",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "5e286047b61cb505",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Access Control Display",
+        "label": "Access Control Status :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1250,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f0c9c23d5de5e5d4",
+        "type": "ui_led",
+        "z": "d2cee00f5160b7d2",
+        "order": 4,
+        "group": "5e88c71097315d38",
+        "width": 0,
+        "height": 0,
+        "label": "Déverrouillage_panne_de_courant",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Déverrouillage_panne_de_courant",
+        "x": 1220,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "aee4e9859ff46ed1",
+        "type": "ui_text",
+        "z": "d2cee00f5160b7d2",
+        "group": "5e88c71097315d38",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "AdaptateurCurrentLimit",
+        "format": "{{msg.payload.adapterCurrentLimit}}  A",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1350,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2056cfa212533e2f",
+        "type": "ui_group",
+        "name": "Type de borne ",
+        "tab": "048ae5ef21ef41f6",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "375e8180d9e38cbe",
+        "type": "ui_group",
+        "name": "Energie",
+        "tab": "048ae5ef21ef41f6",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5e88c71097315d38",
+        "type": "ui_group",
+        "name": "Ampere",
+        "tab": "048ae5ef21ef41f6",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "618a3617b2e04ad1",
+        "type": "ui_group",
+        "name": "Frequence",
+        "tab": "048ae5ef21ef41f6",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "baee9e0aaf33aeb1",
+        "type": "ui_group",
+        "name": "carState",
+        "tab": "048ae5ef21ef41f6",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "244d6d43e09b255f",
+        "type": "ui_group",
+        "name": "Puissance ",
+        "tab": "048ae5ef21ef41f6",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "14d1eaab2c680f55",
+        "type": "ui_group",
+        "name": "ChargeTime",
+        "tab": "048ae5ef21ef41f6",
+        "order": 8,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "77a251d5341ea018",
+        "type": "ui_group",
+        "name": "Type d'équilibrage de charge",
+        "tab": "048ae5ef21ef41f6",
+        "order": 9,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5e286047b61cb505",
+        "type": "ui_group",
+        "name": "Paramètre utilisateur ",
+        "tab": "048ae5ef21ef41f6",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "048ae5ef21ef41f6",
+        "type": "ui_tab",
+        "name": "Paramètres go-eCharger ",
+        "icon": "fa-battery-three-quarters",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    }
+]

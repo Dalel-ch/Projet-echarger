@@ -1,0 +1,487 @@
+[
+    {
+        "id": "cc619feca4f04260",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ba518df86ca6f8c",
+        "type": "ui_switch",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "MQTT Active",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "mce",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "714dda65ec2ce1c6",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mce in",
+        "links": [
+            "cbc5ce6bf34b2301"
+        ],
+        "x": 125,
+        "y": 120,
+        "wires": [
+            [
+                "6eafa9f46b2a9857"
+            ]
+        ]
+    },
+    {
+        "id": "6eafa9f46b2a9857",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "2ba518df86ca6f8c"
+            ]
+        ]
+    },
+    {
+        "id": "4b4432647749d4da",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mcu in",
+        "links": [
+            "3fddf550a9d46c40"
+        ],
+        "x": 125,
+        "y": 200,
+        "wires": [
+            [
+                "7c728e673a6e096f"
+            ]
+        ]
+    },
+    {
+        "id": "7c728e673a6e096f",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "b3d545fa1d67a453"
+            ]
+        ]
+    },
+    {
+        "id": "b3d545fa1d67a453",
+        "type": "ui_text_input",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "URL",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": "0",
+        "topic": "mcu",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "2d1bcc34a7e74a14",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mtp in",
+        "links": [
+            "2f283fe892c51641"
+        ],
+        "x": 125,
+        "y": 260,
+        "wires": [
+            [
+                "0cb2626f82d9cc3a"
+            ]
+        ]
+    },
+    {
+        "id": "0cb2626f82d9cc3a",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "9f8b1649598eaa86"
+            ]
+        ]
+    },
+    {
+        "id": "9f8b1649598eaa86",
+        "type": "ui_text_input",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "Prefix",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "mtp",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "169a0d015ed4a94d",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mcr in",
+        "links": [
+            "444afb644ffc4d01"
+        ],
+        "x": 125,
+        "y": 320,
+        "wires": [
+            [
+                "a88f4a6b82c14b02"
+            ]
+        ]
+    },
+    {
+        "id": "a88f4a6b82c14b02",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "2dfa3f52960281ea"
+            ]
+        ]
+    },
+    {
+        "id": "2dfa3f52960281ea",
+        "type": "ui_switch",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "MQTT read only",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "mcr",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "805246d76f0ee64a",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mhe in",
+        "links": [
+            "6f9649e44ef4d594"
+        ],
+        "x": 125,
+        "y": 380,
+        "wires": [
+            [
+                "cc44cc668c41a012"
+            ]
+        ]
+    },
+    {
+        "id": "cc44cc668c41a012",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 380,
+        "wires": [
+            [
+                "5d4b1f336f5a3804"
+            ]
+        ]
+    },
+    {
+        "id": "5d4b1f336f5a3804",
+        "type": "ui_switch",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "MQTT Homeassistant enabled",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "mhe",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "2ee35560be8fbdb8",
+        "type": "function",
+        "z": "cc619feca4f04260",
+        "name": "set api",
+        "func": "var apiUrlSet = global.get(\"apiUrlSet\") +'&';\nvar valeur = msg.payload;\nvar apiKey = msg.topic+'=';\nmsg.url = apiUrlSet +apiKey+String(valeur);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "bda35d6c539a8807"
+            ]
+        ]
+    },
+    {
+        "id": "d3d2b2fa30b59926",
+        "type": "debug",
+        "z": "cc619feca4f04260",
+        "name": "debug 401",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bda35d6c539a8807",
+        "type": "http request",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 830,
+        "y": 120,
+        "wires": [
+            [
+                "d3d2b2fa30b59926"
+            ]
+        ]
+    },
+    {
+        "id": "8bf8bab6a389f35e",
+        "type": "link in",
+        "z": "cc619feca4f04260",
+        "name": "mht in",
+        "links": [
+            "87ca3152b672207d"
+        ],
+        "x": 125,
+        "y": 440,
+        "wires": [
+            [
+                "9e8fa7bc4a887bb6"
+            ]
+        ]
+    },
+    {
+        "id": "9e8fa7bc4a887bb6",
+        "type": "rbe",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 440,
+        "wires": [
+            [
+                "4091331f3f600b4a"
+            ]
+        ]
+    },
+    {
+        "id": "4091331f3f600b4a",
+        "type": "ui_text_input",
+        "z": "cc619feca4f04260",
+        "name": "",
+        "label": "MQTT Homeassistant  prefix enabled",
+        "tooltip": "",
+        "group": "ee36bfb5365ed290",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "mht",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "2ee35560be8fbdb8"
+            ]
+        ]
+    },
+    {
+        "id": "ee36bfb5365ed290",
+        "type": "ui_group",
+        "name": "mqtt",
+        "tab": "947d6ef3fe17b327",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "947d6ef3fe17b327",
+        "type": "ui_tab",
+        "name": "Paramètres  MQTT",
+        "icon": "fa-battery-three-quarters",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    }
+]

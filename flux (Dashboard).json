@@ -1,0 +1,1122 @@
+[
+    {
+        "id": "b98d9e1b99974958",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "156039b3862c8afd",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "fhz",
+        "payloadType": "global",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "c1ec1242b8cebe1e"
+            ]
+        ]
+    },
+    {
+        "id": "c1ec1242b8cebe1e",
+        "type": "rbe",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "cf799773f4926d66",
+                "6ddd352d6d854c80"
+            ]
+        ]
+    },
+    {
+        "id": "cf799773f4926d66",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 337",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "63d157b842a8712b",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "utc",
+        "payloadType": "global",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "c394bf5d4faa6327",
+                "e766b2a376a05b02"
+            ]
+        ]
+    },
+    {
+        "id": "ca9eac3c8c026416",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 339",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c394bf5d4faa6327",
+        "type": "function",
+        "z": "b98d9e1b99974958",
+        "name": "Date",
+        "func": "// Supposons que la chaîne de date et d'heure soit stockée dans msg.payload\nconst dateTime = msg.payload;\n\n// Diviser la chaîne de date et d'heure\nconst [date, time] = dateTime.split('T');\n\n// Stocker la date et l'heure séparément dans msg\nmsg.date = date;\nmsg.time = time;\n\n// Retourner le message modifié\nreturn [ { payload: msg.date } ];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "ca9eac3c8c026416",
+                "361084e090ceb6b5"
+            ]
+        ]
+    },
+    {
+        "id": "e766b2a376a05b02",
+        "type": "function",
+        "z": "b98d9e1b99974958",
+        "name": "Heure",
+        "func": "// Supposons que la chaîne de date et d'heure soit stockée dans msg.payload\nconst dateTime = msg.payload;\n\n// Diviser la chaîne de date et d'heure\nconst [date, time] = dateTime.split('T');\n\n// Stocker la date et l'heure séparément dans msg\nmsg.date = date;\nmsg.time = time;\n\n// Retourner le message modifié\nreturn [  { payload: msg.time } ];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "ce863729d241d581",
+                "1778d9cc79f6bb22"
+            ]
+        ]
+    },
+    {
+        "id": "ce863729d241d581",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 342",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "6ddd352d6d854c80",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "8faf1ad44778ecca",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Frequence  ",
+        "format": "{{msg.payload.toFixed(2)}} Hrz",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#5cf05e",
+        "x": 630,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "0b22dfda4e544ebd",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "wh",
+        "payloadType": "global",
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "dad8e30feaf9618d",
+                "b00b97cef5040c6c"
+            ]
+        ]
+    },
+    {
+        "id": "dad8e30feaf9618d",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 344",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8b9922b3e6f731ea",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 345",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d22738b9b268d646",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "amp",
+        "payloadType": "global",
+        "x": 160,
+        "y": 700,
+        "wires": [
+            [
+                "8b9922b3e6f731ea",
+                "9dbf01e510fcd19b",
+                "abb339c92b0634e5",
+                "619fd53d95435255"
+            ]
+        ]
+    },
+    {
+        "id": "9dbf01e510fcd19b",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "e3c7d30ca0c9be87",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Ampere L1",
+        "format": "{{msg.payload}}:0.00A",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#1dd755",
+        "x": 410,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "619fd53d95435255",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "e3c7d30ca0c9be87",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Ampere L3",
+        "format": "{{msg.payload}}:0.00A",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#29dbc6",
+        "x": 410,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "abb339c92b0634e5",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "e3c7d30ca0c9be87",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Ampere L2",
+        "format": "{{msg.payload}}:0.00A",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#cfd219",
+        "x": 410,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "a8b14dc5675c7b47",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "nrg",
+        "payloadType": "global",
+        "x": 110,
+        "y": 960,
+        "wires": [
+            [
+                "014ab28753c2d9b2",
+                "d63635d32d4049bb",
+                "44cc26fb930c5a8b",
+                "2f064cbb15fbc18d",
+                "57a6939ae7f4c2fe"
+            ]
+        ]
+    },
+    {
+        "id": "014ab28753c2d9b2",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 346",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d63635d32d4049bb",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "48561ee8df228d37",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "volt L1:",
+        "format": "{{msg.payload[0].toFixed(2)}}V",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#3eee1b",
+        "x": 420,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "44cc26fb930c5a8b",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "48561ee8df228d37",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "volt L2:",
+        "format": "{{msg.payload[1].toFixed(2)}}V",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#c4d920",
+        "x": 420,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "2f064cbb15fbc18d",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "48561ee8df228d37",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "volt L3:",
+        "format": "{{msg.payload[2].toFixed(2)}}V",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#294ee0",
+        "x": 420,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "57a6939ae7f4c2fe",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "48561ee8df228d37",
+        "order": 4,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "volt N:",
+        "format": "{{msg.payload[3].toFixed(2)}}V",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#d93320",
+        "x": 410,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "b00b97cef5040c6c",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "0c73efd0a2760898",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Charged :",
+        "format": "{{msg.payload}} 0.00Wh",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#1054da",
+        "x": 440,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "5fd3fc2625863777",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "tma",
+        "payloadType": "global",
+        "x": 170,
+        "y": 1240,
+        "wires": [
+            [
+                "9dac0eec4202c2eb",
+                "1f2f81bfe74e2db4",
+                "5f8b4b5c39cf1f9e"
+            ]
+        ]
+    },
+    {
+        "id": "9dac0eec4202c2eb",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 347",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "1f2f81bfe74e2db4",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "28bbccdc16ba6b39",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Type 2 :",
+        "format": "{{msg.payload[0]}} °C",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#f25602",
+        "x": 480,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "5f8b4b5c39cf1f9e",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "28bbccdc16ba6b39",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Power supply :",
+        "format": "{{msg.payload[1]}}°C",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#4edad0",
+        "x": 500,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "fec8ad797440e3c7",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "rssi",
+        "payloadType": "global",
+        "x": 210,
+        "y": 1440,
+        "wires": [
+            [
+                "6a75ff1425338ba8",
+                "1ee431cd6c07099a"
+            ]
+        ]
+    },
+    {
+        "id": "97f6cebd8fb870a0",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 349",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "fdf72b988aa64e9d",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "rbt",
+        "payloadType": "global",
+        "x": 190,
+        "y": 1580,
+        "wires": [
+            [
+                "41732f0a683af977",
+                "62974ec6c5335fe4"
+            ]
+        ]
+    },
+    {
+        "id": "41732f0a683af977",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 350",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "62974ec6c5335fe4",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "54276642387596bf",
+        "order": 1,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "Temps de démarrage:",
+        "format": "{{msg.payload}} ms",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#2349e1",
+        "x": 540,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "2e89ea252dc2b6a7",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "adf71f26ce9c8640",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Wifi signal  :",
+        "format": "{{msg.payload}} %",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#1654e3",
+        "x": 650,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "361084e090ceb6b5",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "9b626141f59cbcbf",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "Date",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 630,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0d68aec18d440f72",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "9b626141f59cbcbf",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "name": "Time",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1778d9cc79f6bb22",
+        "type": "function",
+        "z": "b98d9e1b99974958",
+        "name": "Suprimer partie milisecondes",
+        "func": "// Vérifier que msg.payload est défini et est une chaîne de caractères\nif (typeof msg.payload === 'string') {\n    // Supposons que msg.payload contient l'horodatage sous forme de chaîne de caractères\n    let timestamp = msg.payload;\n\n    // Utiliser une expression régulière pour supprimer les millisecondes\n    let cleanedTimestamp = timestamp.replace(/\\.\\d{3}$/, '');\n\n    // Assigner le résultat à msg.payload\n    msg.payload = cleanedTimestamp;\n} \n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 440,
+        "wires": [
+            [
+                "0d68aec18d440f72",
+                "82935d5a8babcaf6"
+            ]
+        ]
+    },
+    {
+        "id": "82935d5a8babcaf6",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 355",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6a75ff1425338ba8",
+        "type": "function",
+        "z": "b98d9e1b99974958",
+        "name": "Supprimer les décimales",
+        "func": "// Vérifier que msg.payload est défini et est un nombre\nif (typeof msg.payload === 'number') {\n    const maxRSSI = -30;\n    const minRSSI = -90;\n    const rssi = msg.payload;\n\n    // Calculer le pourcentage\n    let percentage = ((rssi - minRSSI) / (maxRSSI - minRSSI)) * 100;\n\n    // Assigner le résultat à msg.payload, en éliminant les décimales\n    msg.payload = Math.floor(percentage);\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1460,
+        "wires": [
+            [
+                "97f6cebd8fb870a0",
+                "2e89ea252dc2b6a7"
+            ]
+        ]
+    },
+    {
+        "id": "1ee431cd6c07099a",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 356",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "866c65568999dda1",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1720,
+        "wires": [
+            [
+                "629d81c248030fb5"
+            ]
+        ]
+    },
+    {
+        "id": "629d81c248030fb5",
+        "type": "ui_text",
+        "z": "b98d9e1b99974958",
+        "group": "8faf1ad44778ecca",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Total power average ",
+        "format": "{{msg.payload}} 0W",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 600,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "8aa1c0d300f2618c",
+        "type": "inject",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "adi",
+        "payloadType": "global",
+        "x": 210,
+        "y": 1820,
+        "wires": [
+            [
+                "ccecd18fa0cf0e25",
+                "dde9e435fd0bc7c1"
+            ]
+        ]
+    },
+    {
+        "id": "ccecd18fa0cf0e25",
+        "type": "debug",
+        "z": "b98d9e1b99974958",
+        "name": "debug 357",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "dde9e435fd0bc7c1",
+        "type": "ui_switch",
+        "z": "b98d9e1b99974958",
+        "name": "",
+        "label": "Requested current : 16A",
+        "tooltip": "",
+        "group": "e3c7d30ca0c9be87",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 670,
+        "y": 1840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67a595f648f6badf",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "4c4b815810c05093",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "6e9e574e06f151c8",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "4c4b815810c05093",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "75e3083ac780dd2a",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "4c4b815810c05093",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "9dfebf4c39a6423b",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "4c4b815810c05093",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d2c6fe9041a97f90",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "",
+        "order": 2,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "6b0e3dd81d1d8d76",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "9b626141f59cbcbf",
+        "order": 2,
+        "width": 17,
+        "height": 1
+    },
+    {
+        "id": "8e2f98a66ca2f8a7",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "8faf1ad44778ecca",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "4ac425f9ad749328",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "8faf1ad44778ecca",
+        "order": 4,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "62a92c8a07b0c68d",
+        "type": "ui_spacer",
+        "z": "b98d9e1b99974958",
+        "name": "spacer",
+        "group": "28bbccdc16ba6b39",
+        "order": 2,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8faf1ad44778ecca",
+        "type": "ui_group",
+        "name": "More Information",
+        "tab": "e938fbb4adb24443",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3c7d30ca0c9be87",
+        "type": "ui_group",
+        "name": "Ampere",
+        "tab": "e938fbb4adb24443",
+        "order": 4,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "48561ee8df228d37",
+        "type": "ui_group",
+        "name": "voltage ",
+        "tab": "e938fbb4adb24443",
+        "order": 6,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0c73efd0a2760898",
+        "type": "ui_group",
+        "name": "Energy",
+        "tab": "e938fbb4adb24443",
+        "order": 5,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "28bbccdc16ba6b39",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "e938fbb4adb24443",
+        "order": 7,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "54276642387596bf",
+        "type": "ui_group",
+        "name": "Temps de démarrage",
+        "tab": "e938fbb4adb24443",
+        "order": 8,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "adf71f26ce9c8640",
+        "type": "ui_group",
+        "name": "Intensité du signal RSSI",
+        "tab": "e938fbb4adb24443",
+        "order": 3,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9b626141f59cbcbf",
+        "type": "ui_group",
+        "name": "dateTime",
+        "tab": "e938fbb4adb24443",
+        "order": 1,
+        "disp": false,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e938fbb4adb24443",
+        "type": "ui_tab",
+        "name": " Informations go-echarger",
+        "icon": "fa-battery-three-quarters",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
+    }
+]

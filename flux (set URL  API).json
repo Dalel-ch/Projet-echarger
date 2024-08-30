@@ -1,0 +1,602 @@
+[
+    {
+        "id": "03ef281d02409e4d",
+        "type": "tab",
+        "label": "set URL  API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fd1c0e098abf7efb",
+        "type": "file in",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "filename": "E:\\goeChargeParam\\param.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "f8a5e30032b3085c"
+            ]
+        ]
+    },
+    {
+        "id": "f8a5e30032b3085c",
+        "type": "json",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "abc3ff4e76750207",
+                "e062bf5453d29d4e"
+            ]
+        ]
+    },
+    {
+        "id": "cf580ce39e6495c0",
+        "type": "json",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 710,
+        "y": 180,
+        "wires": [
+            [
+                "a81467ae22ad5983"
+            ]
+        ]
+    },
+    {
+        "id": "a81467ae22ad5983",
+        "type": "file",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "filename": "E:\\goeChargeParam\\param.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 930,
+        "y": 180,
+        "wires": [
+            [
+                "fd1c0e098abf7efb"
+            ]
+        ]
+    },
+    {
+        "id": "ea20937f03e2c62e",
+        "type": "inject",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "fd1c0e098abf7efb"
+            ]
+        ]
+    },
+    {
+        "id": "0f0cfeedb30fad9e",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "set url \"status\"",
+        "func": "var apiSettings = global.get(\"apiSettings\");\nvar serialNumber = apiSettings[\"go-echarger\"];\nvar apiToken = apiSettings[\"api-Token\"];\nvar https = 'https://'; \nvar api = '.api.v3.go-e.io/api/status?token='\nvar url = https + serialNumber + api + apiToken;\nglobal.set(\"apiUrl\",url)\nmsg.payload = url;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abc3ff4e76750207",
+        "type": "ui_form",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "label": "",
+        "group": "cfa0fc5352152871",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "go-echarger",
+                "value": "go-echarger",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "api-Token",
+                "value": "api-Token",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "go-echarger": "",
+            "api-Token": ""
+        },
+        "payload": "",
+        "submit": "save",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "0c071965fa868dc7"
+            ]
+        ]
+    },
+    {
+        "id": "0c071965fa868dc7",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "apiSettings global set ",
+        "func": "var apiSettings = msg.payload;\nglobal.set(\"apiSettings\",apiSettings); \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "cf580ce39e6495c0"
+            ]
+        ]
+    },
+    {
+        "id": "e062bf5453d29d4e",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "apiSettings global set ",
+        "func": "var apiSettings = msg.payload;\nglobal.set(\"apiSettings\",apiSettings); \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 420,
+        "wires": [
+            [
+                "0f0cfeedb30fad9e",
+                "fb4e1227e54164d3"
+            ]
+        ]
+    },
+    {
+        "id": "1711c1fa24d478ae",
+        "type": "json",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 800,
+        "wires": [
+            [
+                "d27124aca533168c",
+                "81bd36a747147f83",
+                "a514b7044812ec52",
+                "cd51c0313c5f59a3"
+            ]
+        ]
+    },
+    {
+        "id": "6c9377591bbed8fe",
+        "type": "http request",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 780,
+        "wires": [
+            [
+                "1711c1fa24d478ae",
+                "cd51c0313c5f59a3"
+            ]
+        ]
+    },
+    {
+        "id": "7faf460a21b0ceed",
+        "type": "inject",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "props": [
+            {
+                "p": "url",
+                "v": "apiUrl",
+                "vt": "global"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 320,
+        "y": 780,
+        "wires": [
+            [
+                "6c9377591bbed8fe"
+            ]
+        ]
+    },
+    {
+        "id": "d27124aca533168c",
+        "type": "change",
+        "z": "03ef281d02409e4d",
+        "name": "set globlal api resp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "apiResp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb4e1227e54164d3",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "set url \"SET\"",
+        "func": "var apiSettings = global.get(\"apiSettings\");\nvar serialNumber = apiSettings[\"go-echarger\"];\nvar apiToken = apiSettings[\"api-Token\"];\nvar https = 'https://'; \nvar api = '.api.v3.go-e.io/api/set?token='\nvar url = https + serialNumber + api + apiToken;\nglobal.set(\"apiUrlSet\",url)\nmsg.payload = url;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 660,
+        "wires": [
+            [
+                "38152ae979faa862"
+            ]
+        ]
+    },
+    {
+        "id": "38152ae979faa862",
+        "type": "debug",
+        "z": "03ef281d02409e4d",
+        "name": "debug 403",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "81bd36a747147f83",
+        "type": "debug",
+        "z": "03ef281d02409e4d",
+        "name": "debug 404",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "a514b7044812ec52",
+        "type": "change",
+        "z": "03ef281d02409e4d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dll",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 820,
+        "wires": [
+            [
+                "ac36e22dd05ed9b5"
+            ]
+        ]
+    },
+    {
+        "id": "ac36e22dd05ed9b5",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "get dllUrl Token",
+        "func": "var url = msg.payload;\nvar dllUrlToken = url.split('e=')[1];\nglobal.set(\"dllUrlToken\",dllUrlToken)\nmsg.payload = dllUrlToken;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 940,
+        "wires": [
+            [
+                "b80228127791c1cd"
+            ]
+        ]
+    },
+    {
+        "id": "b80228127791c1cd",
+        "type": "debug",
+        "z": "03ef281d02409e4d",
+        "name": "debug 405",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "cd51c0313c5f59a3",
+        "type": "function",
+        "z": "03ef281d02409e4d",
+        "name": "Check Status",
+        "func": "var statusCode = msg.statusCode;\nif (statusCode === 200) {\n    msg.payload = {text: \"Borne en ligne\", color: \"green\"};\n    node.status({fill: \"green\", shape: \"dot\", text: \"Borne en ligne\"});\n} else if (statusCode === 401) {\n    msg.payload = {text: \"Erreur: Token invalide\", color: \"red\"};\n    node.status({fill: \"red\", shape: \"ring\", text: \"Token invalide\"});\n} else {\n    msg.payload = {text: \"Borne hors ligne\", color: \"red\"};\n    node.status({fill: \"red\", shape: \"ring\", text: \"Borne hors ligne\"});\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 1080,
+        "wires": [
+            [
+                "aa046f425b556a4c",
+                "e17fbaadc44e88eb"
+            ]
+        ]
+    },
+    {
+        "id": "aa046f425b556a4c",
+        "type": "ui_template",
+        "z": "03ef281d02409e4d",
+        "group": "cfa0fc5352152871",
+        "name": "Status Etat borne/Erreur",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "format": "<div style='color: {{msg.payload.color}};'>{{msg.payload.text}}</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1010,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e17fbaadc44e88eb",
+        "type": "debug",
+        "z": "03ef281d02409e4d",
+        "name": "debug 406",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "08577393d2244ea3",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 1,
+        "width": 26,
+        "height": 1
+    },
+    {
+        "id": "8c48d83c3a13dc91",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 2,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "bc208499c4df1c2e",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 4,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "57a80241260b5faa",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 7,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "3b0e20a0a2347fc1",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 9,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "4947c314c93179a5",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "eb24a99570005337",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e2474adab2d816b7",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "cfa0fc5352152871",
+        "order": 1,
+        "width": 13,
+        "height": 1
+    },
+    {
+        "id": "5dc6390bcda32549",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "cfa0fc5352152871",
+        "order": 2,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "15ed1afad5db5dbd",
+        "type": "ui_spacer",
+        "z": "03ef281d02409e4d",
+        "name": "spacer",
+        "group": "cfa0fc5352152871",
+        "order": 4,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "cfa0fc5352152871",
+        "type": "ui_group",
+        "name": "Ajoute",
+        "tab": "fadd2222c14446a1",
+        "order": 2,
+        "disp": false,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eb24a99570005337",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "7f5686fce520e8b5",
+        "order": 1,
+        "disp": false,
+        "width": 26,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fadd2222c14446a1",
+        "type": "ui_tab",
+        "name": "Ajoute go-echarger",
+        "icon": "fa-battery-three-quarters",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7f5686fce520e8b5",
+        "type": "ui_tab",
+        "name": "Charging Session Export ",
+        "icon": "fa-battery-three-quarters",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    }
+]

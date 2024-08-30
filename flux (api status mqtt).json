@@ -1,0 +1,558 @@
+[
+    {
+        "id": "0d3bbb06c45e532a",
+        "type": "tab",
+        "label": "api status mqtt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cb51306ee7493464",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mce",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mce",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 100,
+        "wires": [
+            [
+                "cbc5ce6bf34b2301"
+            ]
+        ]
+    },
+    {
+        "id": "cbc5ce6bf34b2301",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcer out",
+        "mode": "link",
+        "links": [
+            "714dda65ec2ce1c6"
+        ],
+        "x": 795,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f8754d3d74404555",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcu",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mcu",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "3fddf550a9d46c40"
+            ]
+        ]
+    },
+    {
+        "id": "3fddf550a9d46c40",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcu out ",
+        "mode": "link",
+        "links": [
+            "4b4432647749d4da"
+        ],
+        "x": 795,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fc2942e6a54ab27e",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mtp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mtp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "2f283fe892c51641"
+            ]
+        ]
+    },
+    {
+        "id": "2f283fe892c51641",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mtp out ",
+        "mode": "link",
+        "links": [
+            "2d1bcc34a7e74a14",
+            "b33d2347aa19197c"
+        ],
+        "x": 785,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "aee8f9c34a34cf24",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcr",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mcr",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 695,
+        "y": 280,
+        "wires": [
+            [
+                "444afb644ffc4d01"
+            ]
+        ]
+    },
+    {
+        "id": "444afb644ffc4d01",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcr out ",
+        "mode": "link",
+        "links": [
+            "169a0d015ed4a94d"
+        ],
+        "x": 795,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "42126cde79bdb946",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mhe",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mhe",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 705,
+        "y": 360,
+        "wires": [
+            [
+                "6f9649e44ef4d594"
+            ]
+        ]
+    },
+    {
+        "id": "6f9649e44ef4d594",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mhe out ",
+        "mode": "link",
+        "links": [
+            "805246d76f0ee64a"
+        ],
+        "x": 805,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ea0e3003b13373d1",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mht",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "87ca3152b672207d"
+            ]
+        ]
+    },
+    {
+        "id": "87ca3152b672207d",
+        "type": "link out",
+        "z": "0d3bbb06c45e532a",
+        "name": "mht out ",
+        "mode": "link",
+        "links": [
+            "9a8e5fd3aa059807",
+            "8bf8bab6a389f35e"
+        ],
+        "x": 815,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0a0a805107d91a8a",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mck",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mck",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "3fa72d9321fb0046"
+            ]
+        ]
+    },
+    {
+        "id": "c54851bf0c751652",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mqcc",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mqcc",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 540,
+        "wires": [
+            [
+                "3188303ee9902556"
+            ]
+        ]
+    },
+    {
+        "id": "46143a4e83d40052",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "msc",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.msc",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 600,
+        "wires": [
+            [
+                "7b4da74da0f57f1e"
+            ]
+        ]
+    },
+    {
+        "id": "c1c7b3c5a3ac737e",
+        "type": "change",
+        "z": "0d3bbb06c45e532a",
+        "name": "mcfl",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mcfl",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 660,
+        "wires": [
+            [
+                "edad82b6050e3071"
+            ]
+        ]
+    },
+    {
+        "id": "edad82b6050e3071",
+        "type": "ui_text",
+        "z": "0d3bbb06c45e532a",
+        "group": "ee36bfb5365ed290",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQTT set commands",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3fa72d9321fb0046",
+        "type": "function",
+        "z": "0d3bbb06c45e532a",
+        "name": "active /Desactive",
+        "func": "// Vérifie la valeur de msg.payload et assigne le texte correspondant\nif (msg.payload === true) {\n    msg.payload = 'Activé';\n} else if (msg.payload === false) {\n    msg.payload = 'Désactivé';\n} \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 460,
+        "wires": [
+            [
+                "37ec352707f79c6b"
+            ]
+        ]
+    },
+    {
+        "id": "3188303ee9902556",
+        "type": "function",
+        "z": "0d3bbb06c45e532a",
+        "name": "active /Desactive",
+        "func": "// Vérifie la valeur de msg.payload et assigne le texte correspondant\nif (msg.payload === true) {\n    msg.payload = 'Activé';\n} else if (msg.payload === false) {\n    msg.payload = 'Désactivé';\n} \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 540,
+        "wires": [
+            [
+                "c5c4b90bb8d9cd90"
+            ]
+        ]
+    },
+    {
+        "id": "7b4da74da0f57f1e",
+        "type": "function",
+        "z": "0d3bbb06c45e532a",
+        "name": "active /Desactive",
+        "func": "\nif (msg.payload === true) {\n    msg.payload = 'Activé';\n} else if (msg.payload === false) {\n    msg.payload = 'Désactivé';\n} \nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 600,
+        "wires": [
+            [
+                "cb0b8e141d4df4cb"
+            ]
+        ]
+    },
+    {
+        "id": "37ec352707f79c6b",
+        "type": "ui_text",
+        "z": "0d3bbb06c45e532a",
+        "group": "ee36bfb5365ed290",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQTT client key",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1100,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c5c4b90bb8d9cd90",
+        "type": "ui_text",
+        "z": "0d3bbb06c45e532a",
+        "group": "ee36bfb5365ed290",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQTT client certificate",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1100,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "cb0b8e141d4df4cb",
+        "type": "ui_text",
+        "z": "0d3bbb06c45e532a",
+        "group": "ee36bfb5365ed290",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MQTT server certificate",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1090,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3307c8ea79a612d3",
+        "type": "inject",
+        "z": "0d3bbb06c45e532a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "apiResp",
+        "payloadType": "global",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "cb51306ee7493464",
+                "f8754d3d74404555",
+                "fc2942e6a54ab27e",
+                "aee8f9c34a34cf24",
+                "42126cde79bdb946",
+                "ea0e3003b13373d1",
+                "0a0a805107d91a8a",
+                "c54851bf0c751652",
+                "46143a4e83d40052",
+                "c1c7b3c5a3ac737e"
+            ]
+        ]
+    },
+    {
+        "id": "ee36bfb5365ed290",
+        "type": "ui_group",
+        "name": "mqtt",
+        "tab": "947d6ef3fe17b327",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "947d6ef3fe17b327",
+        "type": "ui_tab",
+        "name": "Paramètres  MQTT",
+        "icon": "fa-battery-three-quarters",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    }
+]
